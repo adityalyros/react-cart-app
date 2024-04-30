@@ -1,20 +1,17 @@
-// src/App.js
-
-import React from "react";
-import Navbar from "./components/Navbar";
-import CartList from "./components/CartList";
-import { CartProvider } from "./context";
+// App.js
+import React from 'react';
+import Navbar from './Navbar';
+import Cart from './Cart';
+import { CartProvider } from './CartContext';
 
 function App() {
   return (
-    <CartProvider>
-      <div id="main">
+    <div id="main">
+      <CartProvider>
         <Navbar />
-        <CartList />
-        <button id="clear-all-cart">Clear Cart</button>
-        <p id="cart-total-amount">Total: $0.00</p>
-      </div>
-    </CartProvider>
+        <Cart />
+      </CartProvider>
+    </div>
   );
 }
 
