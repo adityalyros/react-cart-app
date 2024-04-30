@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+
+import React from "react";
+import Navbar from "./components/Navbar";
+import CartList from "./components/CartList";
+import { CartProvider } from "./context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <div id="main">
+        <Navbar />
+        <CartList />
+        <button id="clear-all-cart">Clear Cart</button>
+        <p id="cart-total-amount">Total: $0.00</p>
+      </div>
+    </CartProvider>
   );
 }
 
